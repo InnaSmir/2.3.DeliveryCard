@@ -34,7 +34,8 @@ public class DataGenerator {
     }
 
     public String generateName(){
-        return faker.name().fullName();
+
+        return faker.name().lastName()+" "+faker.name().firstName();
     }
 
     public String generateWrongName(){
@@ -43,10 +44,11 @@ public class DataGenerator {
     }
 
     public String generatePhone(){
+
         return faker.phoneNumber().phoneNumber();
     }
 
-//    public String generateWrongPhone(){
-//        return faker.numerify("#######");
-//    }
+     public String generateWrongPhone(){
+        return faker.numerify("#######");
+    }
 }

@@ -92,18 +92,18 @@ public class DeliveryCardTest {
                 "указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
     }
 
-//    @Test
-//    void shouldNotSubmitIfPhoneIsWrong(){
-//        $("[data-test-id='city'] input").setValue(generator.generateCity());
-//        $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.BACK_SPACE);
-//        $("[data-test-id='date'] input").sendKeys(generator.generateDate());
-//        $("[data-test-id='name'] input").setValue(generator.generateName());
-//        $("[data-test-id='phone'] input").setValue(generator.generateWrongPhone());
-//        $("[data-test-id='agreement'] .checkbox__box").click();
-//        $(".button").click();
-//        $(" [data-test-id='phone'] .input__sub").shouldHave(exactText("Телефон указан неверно. " +
-//                "Должно быть 11 цифр, например, +79012345678."));
-//    }
+   @Test
+    void shouldNotSubmitIfPhoneIsWrong(){
+       $("[data-test-id='city'] input").setValue(generator.generateCity());
+       $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.BACK_SPACE);
+       $("[data-test-id='date'] input").sendKeys(generator.generateDate());
+       $("[data-test-id='name'] input").setValue(generator.generateName());
+       $("[data-test-id='phone'] input").setValue(generator.generateWrongPhone());
+       $("[data-test-id='agreement'] .checkbox__box").click();
+       $(".button").click();
+       $(" [data-test-id='phone'] .input__sub").shouldHave(exactText("Телефон указан неверно. " +
+             "Должно быть 11 цифр, например, +79012345678."));
+    }
 
     @Test
     void shouldNotSubmitIfCheckboxUnchecked(){
